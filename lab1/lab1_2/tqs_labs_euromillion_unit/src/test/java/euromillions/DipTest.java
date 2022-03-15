@@ -32,8 +32,14 @@ public class DipTest {
 
     @Test
     public void testConstructorFromBadArrays() {
-        // todo: instantiate a dip passing valid or invalid arrays
-        fail("constructor from bad arrays: test not implemented yet");
+        //instantiate a dip passing valid or invalid arrays
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Dip(new int[]{10, 20}, new int[]{1, 2});
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Dip(new int[]{10, 20, 30, 40, 50}, new int[]{1});
+        });
+        //fail("constructor from bad arrays: test not implemented yet");
     }
 
     @Test
