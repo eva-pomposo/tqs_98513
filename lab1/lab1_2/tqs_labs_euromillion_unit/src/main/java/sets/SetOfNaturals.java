@@ -42,6 +42,11 @@ public class SetOfNaturals implements Iterable<Integer> {
 
 
 	public boolean intersects(SetOfNaturals subset) {
+		for (Integer integer : subset) {
+			if (this.collection.contains(integer)) {
+				return true;
+			}
+		}
 		return false;
 	}
 
