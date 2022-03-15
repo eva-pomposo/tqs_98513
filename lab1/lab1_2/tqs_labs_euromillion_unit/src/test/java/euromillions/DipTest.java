@@ -33,13 +33,50 @@ public class DipTest {
     @Test
     public void testConstructorFromBadArrays() {
         //instantiate a dip passing valid or invalid arrays
+        //fail("constructor from bad arrays: test not implemented yet");
+
         assertThrows(IllegalArgumentException.class, () -> {
             new Dip(new int[]{10, 20}, new int[]{1, 2});
         });
         assertThrows(IllegalArgumentException.class, () -> {
             new Dip(new int[]{10, 20, 30, 40, 50}, new int[]{1});
         });
-        //fail("constructor from bad arrays: test not implemented yet");
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Dip(new int[]{10, 20}, new int[]{1});
+        });
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Dip(new int[]{10, 20, 30, 40, 50, 10}, new int[]{1, 2});
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Dip(new int[]{10, 20, 30, 40, 50}, new int[]{1, 2, 3});
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Dip(new int[]{10, 20, 30, 40, 50, 10}, new int[]{1, 2, 3});
+        });
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Dip(new int[]{10, 20, 30, 40, 0}, new int[]{1, 2});
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Dip(new int[]{10, 20, 30, 40, 50}, new int[]{1, 0});
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Dip(new int[]{10, 20, 30, 40, 0}, new int[]{1, 0});
+        });
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Dip(new int[]{10, 20, 30, 40, 51}, new int[]{1, 2});
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Dip(new int[]{10, 20, 30, 40, 50}, new int[]{1, 13});
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Dip(new int[]{10, 20, 30, 40, 51}, new int[]{1, 13});
+        });
+
+        new Dip(new int[]{10, 20, 30, 40, 50}, new int[]{1, 12});
+
     }
 
     @Test
