@@ -6,7 +6,7 @@ mvn compile
 mvn clean package
 mvn test
 ```
-## [ IMPORTNAT ] NOTE FROM EXERCISE 1.1  
+## [ IMPORTANT ] NOTE FROM EXERCISE 1.1  
 Este exercicio só dá para correr através do terminal com os comandos mencionados anteriormente, nao consegui correr pelo editor de texto (usei VScode)
 
 ## Some notes from exercise 1.2 
