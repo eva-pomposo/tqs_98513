@@ -1,5 +1,6 @@
 package integration;
 
+import connection.ISimpleHttpClient;
 import connection.TqsBasicHttpClient;
 import geocoding.Address;
 import geocoding.AddressResolver;
@@ -9,15 +10,20 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class AddressResolverIT {
 
+    private ISimpleHttpClient iHttpClient;
+    private AddressResolver resolver;
 
     @BeforeEach
     public void init(){
+        iHttpClient = new TqsBasicHttpClient();
+        resolver = new AddressResolver(iHttpClient);
     }
 
     @Test
@@ -26,6 +32,9 @@ public class AddressResolverIT {
         //todo
 
         // repeat the same tests conditions from AddressResolverTest, without mocks
+
+        Optional<Address> result = resolver.findAddressForLocation(40.640661, -8.656688);
+        assertEquals( result, new Address( "Cais do Alboi", "Glória e Vera Cruz", "Centro", "3800-246", null) );
 
     }
 
