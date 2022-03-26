@@ -36,7 +36,9 @@ public class AddressResolver {
 
 
     public Optional<Address> findAddressForLocation(double latitude, double longitude) throws URISyntaxException, IOException, ParseException, org.json.simple.parser.ParseException {
-
+        if (longitude < -180 || longitude > 180 || latitude < -90 || latitude > 90){
+            return Optional.empty();
+        } 
         String apiKey = ConfigUtils.getPropertyFromConfig("mapquest_key");
 
         URIBuilder uriBuilder = new URIBuilder("http://open.mapquestapi.com/geocoding/v1/reverse");
