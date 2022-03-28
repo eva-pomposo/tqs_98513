@@ -32,4 +32,13 @@ Na linha de código:
 
 O ficheiro indicado com @TestPropertySource substituirá o application.properties. Esta anotação ajuda assim a configurar os locais dos ficheiros de propriedades específicos para os nossos testes.
 
-### e) the sample project demonstrates three test strategies to assess an API (C, D and E) developed with SpringBoot. Which are the main/key differences?
+### e) The sample project demonstrates three test strategies to assess an API (C, D and E) developed with SpringBoot. Which are the main/key differences?
+
+As estratégias usadas nos testes D e E aparentam alguma semelhança, tendo estes dois uma disparidade notável com o teste C.
+
+Para começar o teste C não envolve a base de dados, mas o teste D e E envolvem.
+O teste C usa o @WebMvcTest, que simula o comportamento de um servidor da aplicaçao num ambiente simples, e além dissoo usa o MockMvc que fornece uma API expressiva. Este teste ainda simula as dependencias relacionadas com o service implementation com a anotação @MockBean. Aqui o componente repository tambem não é envolvido.
+
+Tanto o teste D como o E são testes de integração que envolvem vários componentes. Ambos envolvem as componentes: service implementation, o repository e a base de dados.
+Os dois testes iniciam o contexto da Web completo através da anotação @SpringBootTest e a API é implementada no contexto SpringBoot.
+A diferença entre estes dois testes é nesta API implementada, o teste D usa o Mockvc como entry point para suporte de teste Spring MVC do lado do servidor. Já o teste E usa o TestRestTemplate, um cliente REST para criar pedidos realistas, envolvendo também respostas.
