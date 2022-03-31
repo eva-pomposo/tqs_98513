@@ -13,3 +13,4 @@ Run individual tests:
 
 Acho que tenho mal o teste invalid: whenInValidId_thenCarShouldNotBeFound() Do CarServiceTest.
 Falta fazer a funcao testGetCarById_withIdInvalid() do CarControllerIT.
+da erros o 3.3
