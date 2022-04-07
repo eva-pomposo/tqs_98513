@@ -32,6 +32,20 @@
       ],
       "value": ""
     }, {
+      "id": "530c9e8b-7f33-42ec-85d3-38d5e1f8c5cc",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=h1",
+      "targets": [],
+      "value": "texth1"
+    }, {
+      "id": "d29e0d05-476d-4009-a607-de81b7c1ac9e",
+      "comment": "",
+      "command": "assert",
+      "target": "texth1",
+      "targets": [],
+      "value": "Welcome to the Simple Travel Agency!"
+    }, {
       "id": "a3e75041-78c4-4a49-945c-85e92d83ba64",
       "comment": "",
       "command": "click",
@@ -54,6 +68,20 @@
       ],
       "value": ""
     }, {
+      "id": "41e08838-9383-4715-b507-2c876e6c974c",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=h3",
+      "targets": [],
+      "value": "texth3"
+    }, {
+      "id": "81608318-7cc9-435f-a85f-e93007c800c5",
+      "comment": "",
+      "command": "assert",
+      "target": "texth3",
+      "targets": [],
+      "value": "Flights from Paris to Buenos Aires:"
+    }, {
       "id": "61bb7b91-e4c3-4120-b591-20bfeb4ebae3",
       "comment": "",
       "command": "click",
@@ -75,6 +103,20 @@
         ["xpath=//h2[contains(.,'Your flight from TLV to SFO has been reserved.')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "79c1ac83-85cc-4be0-b76c-a7d4f51054d6",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=h2",
+      "targets": [],
+      "value": "texth2"
+    }, {
+      "id": "03b85784-2006-4598-9a40-a2d3d158df57",
+      "comment": "",
+      "command": "assert",
+      "target": "texth2",
+      "targets": [],
+      "value": "Your flight from TLV to SFO has been reserved."
     }, {
       "id": "8c494692-b745-49e6-a84d-75b76f95237d",
       "comment": "",
@@ -302,6 +344,27 @@
         ["xpath=//h1", "xpath:position"],
         ["xpath=//h1[contains(.,'Thank you for your purchase today!')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "c0db65e3-294a-42a6-a987-4f1b45963326",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=h1",
+      "targets": [],
+      "value": "texth1"
+    }, {
+      "id": "13b88107-af1a-4475-a3ea-22563c76165d",
+      "comment": "",
+      "command": "assert",
+      "target": "texth1",
+      "targets": [],
+      "value": "Thank you for your purchase today!"
+    }, {
+      "id": "57fdcd84-c0f4-4581-beb8-621c6db26150",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "BlazeDemo Confirmation",
+      "targets": [],
       "value": ""
     }]
   }],
