@@ -1,4 +1,4 @@
-package com.tqs.alineaB;
+package com.tqs.alineaBeC;
 
 /**
  * Hello world!
