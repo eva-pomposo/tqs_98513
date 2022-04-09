@@ -11,6 +11,7 @@ Run individual tests:
  mvn test -Dtest=CarServiceTest*
 ```
 
-Acho que tenho mal o teste invalid: whenInValidId_thenCarShouldNotBeFound() Do CarServiceTest.
-Falta fazer a funcao testGetCarById_withIdInvalid() do CarControllerIT.
-da erros o 3.3
+Acho que tenho mal:
+-> funcao whenInValidId_thenCarShouldNotBeFound() no ficheiro CarServiceTest.
+-> funcao testGetCarById_withIdInvalid() no ficheiro CarControllerIT.
+
