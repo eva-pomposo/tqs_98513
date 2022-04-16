@@ -11,7 +11,9 @@ Run individual tests:
  mvn test -Dtest=CarServiceTest*
 ```
 
-Acho que tenho mal:
+Tenho mal:
 -> funcao whenInValidId_thenCarShouldNotBeFound() no ficheiro CarServiceTest.
 -> funcao testGetCarById_withIdInvalid() no ficheiro CarControllerIT.
+
+Na pasta [/lab6/lab6_3/cars](https://github.com/eva-pomposo/tqs_98513/tree/main/lab6/lab6_3/cars) encontra-se o exercicio 3.2 com a implementacao certa.
 
