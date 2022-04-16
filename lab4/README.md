@@ -7,7 +7,3 @@ A extensão Selenium-Júpiter se calhar nao está a ser bem utilizada. Os fichei
 String driverPath = "/home/eva/Downloads/geckodriver-v0.30.0-linux64/geckodriver";
 System.setProperty("webdriver.gecko.driver", driverPath);
 ```
-
-## Exercise 4.4
-
-Na execuçao de ambos os ficheiros de teste, dá-me erros, acho que sao falta de dependencias, ou dependencias a mais.
