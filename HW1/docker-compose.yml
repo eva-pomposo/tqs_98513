@@ -1,0 +1,12 @@
+version: "3.1"
+
+services:
+    covid19service:
+      build: ./projservice/covid19Service
+      restart: on-failure
+      ports:
+        - 6868:8000
+      environment:
+        SPRING_APPLICATION_JSON: '{
+          "server.port": 8000
+        }'
