@@ -15,6 +15,11 @@
   <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
@@ -55,7 +60,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="otherdays" class="nav-link">
+              <a href="/otherdays" class="nav-link">
                 <i class="nav-icon fa fa-history"></i>
                 <p>
                   Other days
@@ -88,7 +93,44 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Select the country you want to analyze</h3>
+              </div>
+              <!-- /.card-header -->
               <div class="card-body">
+                <form action="#" th:action="@{/otherdays/filter}" th:object="${filterForm}" method="post">
+                <div class="row">
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label>Country *</label>
+                      <select th:field="*{countryName}" class="form-control select2" style="width: 100%;">
+                        <option th:if="${countrySelected}" th:value="${countrySelected}" th:text="${countrySelected}" selected="selected"></option>
+                        <option th:each="country : ${countries}" th:value="${country.name}" th:text="${country.name}" th:if="${countrySelected != country.name}"></option>
+                      </select>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-md-2">
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-md-2">
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-md-2">
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-md-2">
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-md-2">
+                    <button type="submit" style="margin: 20px 0 0 0;" class="btn btn-block btn-primary btn-lg">Search</button>
+                  </div>
+                   <!-- /.col -->
+                </div>
+                <!-- /.row -->
+                </form>
+                
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
@@ -115,205 +157,26 @@
                     <th>Total</th>
                   </tr>
                   </thead>
-                  <tr>
-                    <td>New</td>
-                    <td>Active</td>
-                    <td>Critical</td>
-                    <td>Recovered</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                  </tr>
-                  <tr>
-                    <td>New</td>
-                    <td>Active</td>
-                    <td>Critical</td>
-                    <td>Recovered</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                  </tr>
-                  <tr>
-                    <td>New</td>
-                    <td>Active</td>
-                    <td>Critical</td>
-                    <td>Recovered</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                  </tr>
-                  <tr>
-                    <td>New</td>
-                    <td>Active</td>
-                    <td>Critical</td>
-                    <td>Recovered</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                  </tr>
-                  <tr>
-                    <td>New</td>
-                    <td>Active</td>
-                    <td>Critical</td>
-                    <td>Recovered</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                  </tr>
-                  <tr>
-                    <td>New</td>
-                    <td>Active</td>
-                    <td>Critical</td>
-                    <td>Recovered</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                  </tr>
-                  <tr>
-                    <td>New</td>
-                    <td>Active</td>
-                    <td>Critical</td>
-                    <td>Recovered</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                  </tr>
-                  <tr>
-                    <td>New</td>
-                    <td>Active</td>
-                    <td>Critical</td>
-                    <td>Recovered</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                  </tr>
-                  <tr>
-                    <td>New</td>
-                    <td>Active</td>
-                    <td>Critical</td>
-                    <td>Recovered</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                  </tr>
-                  <tr>
-                    <td>New</td>
-                    <td>Active</td>
-                    <td>Critical</td>
-                    <td>Recovered</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                  </tr>
-                  <tr>
-                    <td>New</td>
-                    <td>Active</td>
-                    <td>Critical</td>
-                    <td>Recovered</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>New</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                    <td>1M_pop</td>
-                    <td>Total</td>
-                  </tr>
                   <tbody>
+                    <tr th:each="statistic : ${statistics}">
+                      <td th:text="${{statistic.continent}}"/>
+                      <td th:text="${{statistic.country}}"/>
+                      <td th:text="${{statistic.population}}"/>
+                      <td th:text="${{statistic.new_cases}}"/>
+                      <td th:text="${{statistic.active_cases}}"/>
+                      <td th:text="${{statistic.critical_cases}}"/>
+                      <td th:text="${{statistic.recovered_cases}}"/>
+                      <td th:text="${{statistic.pop1m_cases}}"/>
+                      <td th:text="${{statistic.total_cases}}"/>
+                      <td th:text="${{statistic.new_deaths}}"/>
+                      <td th:text="${{statistic.pop1m_deaths}}"/>
+                      <td th:text="${{statistic.total_deaths}}"/>
+                      <td th:text="${{statistic.pop1m_tests}}"/>
+                      <td th:text="${{statistic.total_tests}}"/>
+                      <td th:text="${{statistic.day}}"/>
+                      <td th:text="${{statistic.time}}"/>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
               <!-- /.card-body -->
@@ -349,6 +212,8 @@
 <script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.min.js"></script>
+<!-- Select2 -->
+<script src="../plugins/select2/js/select2.full.min.js"></script>
 <!-- Page specific script -->
 <script>
   $(function () {
@@ -362,6 +227,17 @@
       "responsive": true,
     });
   });
+
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+  })
+ 
 </script>
 </body>
 </html>

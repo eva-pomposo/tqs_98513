@@ -17,3 +17,7 @@ API que escolhi:
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_table
 
 https://adminlte.io/themes/v3/iframe.html#
+
+
+Tirar o string e colocar date e time.
+quando pesquiso por USA no otherdays encrava por ser mts dados

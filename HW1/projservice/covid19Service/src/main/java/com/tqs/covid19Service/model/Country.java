@@ -14,7 +14,6 @@ public class Country {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //@NotNull(message = "Country name is mandatory")
     private String name;
 
     public Country() {
@@ -34,6 +33,7 @@ public class Country {
 
     public void setName(String name) {
         this.name = name;
-    }
+    }   
     
+
 }
