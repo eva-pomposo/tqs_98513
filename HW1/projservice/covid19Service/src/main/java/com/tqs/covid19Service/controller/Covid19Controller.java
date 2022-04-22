@@ -26,6 +26,12 @@ public class Covid19Controller {
         return historyService.getHistory(country);
     }
 
+    //day-> (YYYY-MM-DD)
+    @GetMapping("/history/{country}/{day}") //assim que se passa 2 argumentos??
+    public List<Statistic> getHistory(@PathVariable String country, @PathVariable String day) throws IOException, URISyntaxException, InterruptedException {
+        return historyService.getHistory(country, day);
+    }
+
     @GetMapping("/countries")
     public List<Country> getCountries() throws IOException, URISyntaxException, InterruptedException {
         return countryService.getCountries();

@@ -40,16 +40,27 @@ public class Pages {
         return "otherDays";
     }
 
-    @PostMapping("/otherdays/filter")
+    @PostMapping("/otherdays")
     public String filter(@ModelAttribute FilterOtherDays filterOtherDays, Model model) {
         model.addAttribute("countries", countries);
 
-        try {
-            model.addAttribute("statistics", covid19Controller.getHistory(filterOtherDays.getCountryName()));
-            model.addAttribute("countrySelected", filterOtherDays.getCountryName());
-        } catch (IOException | URISyntaxException | InterruptedException e) {
-            e.printStackTrace();
+        if (filterOtherDays.getDay().isEmpty()) {
+            try {
+                model.addAttribute("statistics", covid19Controller.getHistory(filterOtherDays.getCountryName()));
+            } catch (IOException | URISyntaxException | InterruptedException e) {
+                e.printStackTrace();
+            }
+        } else {
+            try {
+                String[] day = filterOtherDays.getDay().split("/");
+                model.addAttribute("statistics", covid19Controller.getHistory(filterOtherDays.getCountryName(), day[2] + "-" + day[0] + "-" + day[1]));
+            } catch (IOException | URISyntaxException | InterruptedException e) {
+                e.printStackTrace();
+            }
         }
+
+        model.addAttribute("countrySelected", filterOtherDays.getCountryName());
+
         return "otherDays";
     }
     

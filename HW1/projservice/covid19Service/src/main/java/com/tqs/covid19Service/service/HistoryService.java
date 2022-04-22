@@ -31,6 +31,19 @@ public class HistoryService {
         return history;
     }
 
+    public List<Statistic> getHistory(String country, String day) throws URISyntaxException, IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+		.uri(URI.create("https://covid-193.p.rapidapi.com/history?country=" + country + "&day=" + day))
+		.header("X-RapidAPI-Host", "covid-193.p.rapidapi.com")
+		.header("X-RapidAPI-Key", "886b841662msh40d546b46fa2f68p1573e7jsndafa7121ef3a")
+		.method("GET", HttpRequest.BodyPublishers.noBody())
+		.build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        List<Statistic> history = convertStringtoHistory(response.body());
+
+        return history;
+    }
+
     public List<Statistic> convertStringtoHistory(String string){
         List<Statistic> statistics = new ArrayList<>(); // array??
 
@@ -116,19 +129,4 @@ public class HistoryService {
 
         return statistics;
     }  
-    /*
-    public String getHistory(String country, Date day) throws URISyntaxException, IOException, InterruptedException {
-
-        HttpRequest request = HttpRequest.newBuilder()
-		.uri(URI.create(baseURL + "/history?country=" + country + "&day="))
-		.header("X-RapidAPI-Host", "covid-193.p.rapidapi.com")
-		.header("X-RapidAPI-Key", "886b841662msh40d546b46fa2f68p1573e7jsndafa7121ef3a")
-		.method("GET", HttpRequest.BodyPublishers.noBody())
-		.build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
-
-        return "null";
-    }
-    */
 }

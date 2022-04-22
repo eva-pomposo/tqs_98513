@@ -21,3 +21,4 @@ https://adminlte.io/themes/v3/iframe.html#
 
 Tirar o string e colocar date e time.
 quando pesquiso por USA no otherdays encrava por ser mts dados
+quando pesquiso por dia, o dia desaparece do input :(
