@@ -6,8 +6,7 @@ import java.util.List;
 
 import com.tqs.covid19Service.model.Country;
 import com.tqs.covid19Service.model.Statistic;
-import com.tqs.covid19Service.service.CountryService;
-import com.tqs.covid19Service.service.HistoryService;
+import com.tqs.covid19Service.service.Covid19Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,26 +14,23 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class Covid19Controller {
     @Autowired
-    public HistoryService historyService;
-
-    @Autowired
-    public CountryService countryService;
+    public Covid19Service covid19Service;
 
 
     @GetMapping("/history/{country}")
     public List<Statistic> getHistory(@PathVariable String country) throws IOException, URISyntaxException, InterruptedException {
-        return historyService.getHistory(country);
+        return covid19Service.getHistory(country);
     }
 
     //day-> (YYYY-MM-DD)
     @GetMapping("/history/{country}/{day}") //assim que se passa 2 argumentos??
     public List<Statistic> getHistory(@PathVariable String country, @PathVariable String day) throws IOException, URISyntaxException, InterruptedException {
-        return historyService.getHistory(country, day);
+        return covid19Service.getHistory(country, day);
     }
 
     @GetMapping("/countries")
     public List<Country> getCountries() throws IOException, URISyntaxException, InterruptedException {
-        return countryService.getCountries();
+        return covid19Service.getCountries();
     }
 
 }

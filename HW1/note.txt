@@ -3,8 +3,19 @@ Seu aplicativo (web) deve fornecer detalhes sobre os dados de incidência de COV
 O projeto deve incluir diferentes componentes (Figura 1):
 1. Um aplicativo web, minimalista, que permite aos usuários entrar ou selecionar uma região/país e acessar suas métricas Covid, por exemplo: últimos 3 dias.
 2. Integração com fonte(s) externa(s). Os dados reais devem ser recuperados de um serviço remoto. Seus serviços de back-end funcionarão como um cliente para uma API1 de terceiros, que você acessará para obter os valores necessários.
-3. Implemente um cache2 para reduzir o número de acessos externos. Sempre que uma solicitação é feita a uma API remota, você deve armazenar em cache os resultados; se os mesmos dados (remotos) forem solicitados (ou seja, uma solicitação duplicada), você deverá usar os valores armazenados em cache. O cache deve definir uma política de tempo de vida e produzir algumas estatísticas básicas sobre sua operação (contagem de solicitações, acertos/erros). Todos os dados relacionados às operações de cache não precisam ser persistidos [você pode usar uma estrutura de dados de memória, como um HashMap].
+
+3. Implemente um cache2 para reduzir o número de acessos externos. Sempre que uma solicitação é feita a uma API remota, você deve armazenar em cache os resultados; 
+se os mesmos dados (remotos) forem solicitados (ou seja, uma solicitação duplicada), você deverá usar os valores armazenados em cache.
+O cache deve definir uma política de tempo de vida e produzir algumas estatísticas básicas sobre sua operação (contagem de solicitações, acertos/erros).
+Todos os dados relacionados às operações de cache não precisam ser persistidos [você pode usar uma estrutura de dados de memória, como um HashMap].
+
 4. Forneça sua própria API REST para expor dados de monitoramento COVID a serem invocados por clientes externos.
-Sua API deve permitir interrogar programaticamente (seu) back-end para dados úteis de rastreamento de covid (por exemplo: filtragem por região, por dias,...). Sua API também deve fornecer um endpoint para obter estatísticas básicas sobre o uso do cache (interno).
+Sua API deve permitir interrogar programaticamente (seu) back-end para dados úteis de rastreamento de covid (por exemplo: filtragem por região, por dias,...).
+Sua API também deve fornecer um endpoint para obter estatísticas básicas sobre o uso do cache (interno).
 5. Use uma estratégia de registro para produzir evidências úteis das ações/eventos que ocorreram durante o uso do software, para posterior inspeção/depuração. Certifique-se de aplicar uma biblioteca de log padrão.
 
+
+Cache
+->armazenar dados com tempo de vida para dps n fazer outra vez o pedido à API
+->estatisticas da cache 
+->hashmap
