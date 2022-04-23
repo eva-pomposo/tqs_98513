@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import com.tqs.covid19Service.inputsForms.FilterOtherDays;
 import com.tqs.covid19Service.model.Country;
@@ -62,6 +63,15 @@ public class Pages {
         model.addAttribute("countrySelected", filterOtherDays.getCountryName());
 
         return "otherDays";
+    }
+
+    @GetMapping("/cachestatistics")
+    public String getCacheStatistics(Model model) {
+        Map<String, Integer> cacheStatistics = covid19Controller.getCacheStatistics();
+        model.addAttribute("hits", cacheStatistics.get("hits"));
+        model.addAttribute("misses", cacheStatistics.get("misses"));
+        model.addAttribute("requests", cacheStatistics.get("requests"));
+        return "cacheStatistics";
     }
     
 }

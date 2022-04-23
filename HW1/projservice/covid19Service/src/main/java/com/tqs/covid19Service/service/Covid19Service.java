@@ -7,7 +7,9 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.tqs.covid19Service.model.Cache;
 import com.tqs.covid19Service.model.Country;
@@ -70,8 +72,16 @@ public class Covid19Service {
         return countries;
     }
 
+    public Map<String, Integer> getCacheStatistics(){
+        HashMap<String, Integer> statistics = new HashMap<>();
+        statistics.put("hits", cache.getHits());
+        statistics.put("misses", cache.getMisses());
+        statistics.put("requests", cache.getRequests());
+        return statistics;
+    }
+
     public List<Country> convertStringtoListCountries(String string){
-        List<Country> countries = new ArrayList<>(); // array??
+        List<Country> countries = new ArrayList<>();
 
         JSONObject jo = new JSONObject(string);
 
@@ -83,7 +93,7 @@ public class Covid19Service {
     }
 
     public List<Statistic> convertStringtoHistory(String string){
-        List<Statistic> statistics = new ArrayList<>(); // array??
+        List<Statistic> statistics = new ArrayList<>();
 
         JSONObject jo = new JSONObject(string);
 
@@ -92,7 +102,7 @@ public class Covid19Service {
 
             JSONObject jsonObjectResponse = jo.getJSONArray("response").getJSONObject(i);
             
-            if (!jsonObjectResponse.get("continent").getClass().getName().equals("org.json.JSONObject$Null")) { //tentar com try expected
+            if (!jsonObjectResponse.get("continent").getClass().getName().equals("org.json.JSONObject$Null")) { 
                 statistic.setContinent(jsonObjectResponse.getString("continent"));
             }
             

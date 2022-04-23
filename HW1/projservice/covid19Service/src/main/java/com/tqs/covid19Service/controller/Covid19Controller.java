@@ -3,6 +3,7 @@ package com.tqs.covid19Service.controller;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Map;
 
 import com.tqs.covid19Service.model.Country;
 import com.tqs.covid19Service.model.Statistic;
@@ -23,7 +24,7 @@ public class Covid19Controller {
     }
 
     //day-> (YYYY-MM-DD)
-    @GetMapping("/history/{country}/{day}") //assim que se passa 2 argumentos??
+    @GetMapping("/history/{country}/{day}")
     public List<Statistic> getHistory(@PathVariable String country, @PathVariable String day) throws IOException, URISyntaxException, InterruptedException {
         return covid19Service.getHistory(country, day);
     }
@@ -31,6 +32,11 @@ public class Covid19Controller {
     @GetMapping("/countries")
     public List<Country> getCountries() throws IOException, URISyntaxException, InterruptedException {
         return covid19Service.getCountries();
+    }
+
+    @GetMapping("/cache")
+    public Map<String, Integer> getCacheStatistics(){
+        return covid19Service.getCacheStatistics();
     }
 
 }
