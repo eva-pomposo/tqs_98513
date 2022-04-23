@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.GenerationType;
-import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
@@ -14,10 +13,8 @@ public class Statistic {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;    
 
-    //@NotNull(message = "Continent is mandatory") //??
     private String continent;
 
-    //@NotNull(message = "Country is mandatory") //??
     private String country;
 
     private int population;

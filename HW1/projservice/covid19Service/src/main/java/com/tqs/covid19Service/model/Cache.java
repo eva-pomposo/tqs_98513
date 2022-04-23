@@ -136,6 +136,7 @@ public class Cache {
                         }
                     }
 
+                    //if( !timeToLive_cacheCountry.equals(0L) && timeToLive_cacheCountry < System.currentTimeMillis()){
                     if(timeToLive_cacheCountry < System.currentTimeMillis()){
                         log.info("[CACHE] Delete all countries to cache.");
                         deleteValue_cacheCountry();

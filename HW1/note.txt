@@ -16,8 +16,29 @@ Sua API também deve fornecer um endpoint para obter estatísticas básicas sobr
 5. Use uma estratégia de registro para produzir evidências úteis das ações/eventos que ocorreram durante o uso do software,
 para posterior inspeção/depuração. Certifique-se de aplicar uma biblioteca de log padrão.
 
-
 Cache
 ->armazenar dados com tempo de vida para dps n fazer outra vez o pedido à API
 ->estatisticas da cache 
 ->hashmap
+
+Testes para implementar
+
+O projeto deve incluir a automação de diferentes tipos de testes:
+A) Testes unitários (sugestão: testes de comportamento do cache; testes de "validação de dados", "conversores" ou "utils" em geral, se for o caso).
+B) Testes de nível de serviço, com isolamento de dependência usando mocks (sugestão: teste seus serviços de forma isolada do provedor de dados externo).
+C) Testes de integração em sua API (sugestão Spring Boot MockMvc e/ou REST-Assured).
+D) Testes funcionais (na interface web). Certifique-se de adotar uma abordagem orientada por comportamento (recursos com cenários).
+
+
+A:A e B
+
+Hugo: cachetestes connection,TestA, TesteB,TestC, TestD, TestE, resolver selenium
+Bastos: unit, TestA, TesteB, TesteC, selenium 
+
+B:
+-> testes de integração onde um bean (ex: serviço externo) precisa ser simulado;CarControllerTest; C_EmployeeController_WithMockServiceTest (nao envolve a base de dados);
+
+C:
+-> Os IT's, testeD e testeE
+
+d:...selenium
