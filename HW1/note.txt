@@ -12,7 +12,9 @@ Todos os dados relacionados às operações de cache não precisam ser persistid
 4. Forneça sua própria API REST para expor dados de monitoramento COVID a serem invocados por clientes externos.
 Sua API deve permitir interrogar programaticamente (seu) back-end para dados úteis de rastreamento de covid (por exemplo: filtragem por região, por dias,...).
 Sua API também deve fornecer um endpoint para obter estatísticas básicas sobre o uso do cache (interno).
-5. Use uma estratégia de registro para produzir evidências úteis das ações/eventos que ocorreram durante o uso do software, para posterior inspeção/depuração. Certifique-se de aplicar uma biblioteca de log padrão.
+
+5. Use uma estratégia de registro para produzir evidências úteis das ações/eventos que ocorreram durante o uso do software,
+para posterior inspeção/depuração. Certifique-se de aplicar uma biblioteca de log padrão.
 
 
 Cache

@@ -19,8 +19,14 @@ import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 import com.tqs.covid19Service.model.Statistic;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Service
 public class Covid19Service {
+
+    private static final Logger log = LoggerFactory.getLogger(Covid19Service.class);
+
     private Cache cache = new Cache(60);
 
     public String callEXternalAPI(String url) throws URISyntaxException, IOException, InterruptedException {
@@ -39,11 +45,23 @@ public class Covid19Service {
         List<Statistic> statistics =  cache.getStatisticsWithoutDay_FromCache(country);
 
         if (statistics == null) {
-            statistics = convertStringtoHistory(callEXternalAPI("/history?country=" + country)); 
+            log.info("Get statistics from {} through external API.", country);
+
+            String response = "";
+            try {
+                response = callEXternalAPI("/history?country=" + country);
+            } catch (Exception e) {
+                log.error("There was an error while calling the external API: {}", e.getMessage());
+            }
+
+            log.info("Pass the external API response to a created API response.");
+            statistics = convertStringtoHistory(response); 
+            log.info("[CACHE] Add {} statistics to cache.", country);
             cache.addValue_cacheHistory_withoutDay(country, statistics);
             return statistics;
         }
 
+        log.info("[CACHE] Get {} statistics through cache.", country);
         return statistics;
     }
 
@@ -52,11 +70,23 @@ public class Covid19Service {
         List<Statistic> statistics = cache.getStatisticsWithDay_FromCache(key);
 
         if (statistics == null){
-            statistics = convertStringtoHistory(callEXternalAPI("/history?country=" + country + "&day=" + day));
+            log.info("Get statistics from {} on day {} through external API.", country, day);
+
+            String response = "";
+            try {
+                response = callEXternalAPI("/history?country=" + country + "&day=" + day);
+            } catch (Exception e) {
+                log.error("There was an error while calling the external API: {}", e.getMessage());
+            }
+
+            log.info("Pass the external API response to a created API response.");
+            statistics = convertStringtoHistory(response); 
+            log.info("[CACHE] Add statistics from {} on day {} to cache.", country, day);
             cache.addValue_cacheHistory_withDay(key, statistics);
             return statistics;
         }
 
+        log.info("[CACHE] Get statistics from {} on day {} through cache.", country, day);
         return statistics;
     }
 
@@ -64,11 +94,23 @@ public class Covid19Service {
         List<Country> countries = cache.getCountries_FromCache();
 
         if (countries == null) {
-            countries = convertStringtoListCountries(callEXternalAPI("/countries"));
+            log.info("Get all countries through external API.");
+
+            String response = "";
+            try {
+                response = callEXternalAPI("/countries");
+            } catch (Exception e) {
+                log.error("There was an error while calling the external API: {}", e.getMessage());
+            }
+
+            log.info("Pass the external API response to a created API response.");
+            countries = convertStringtoListCountries(response); 
+            log.info("[CACHE] Add all countries to cache.");
             cache.addValue_cacheCountry(countries);
             return countries;
         }
 
+        log.info("[CACHE] Get all countries through cache.");
         return countries;
     }
 

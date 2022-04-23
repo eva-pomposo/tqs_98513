@@ -5,7 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Cache {
+    private static final Logger log = LoggerFactory.getLogger(Cache.class);
+
     private int hits = 0;
     private int misses = 0;
     private int requests = 0;
@@ -119,17 +124,20 @@ public class Cache {
 
                     for(String key: cacheHistory_withoutDay.keySet()){
                         if(timeToLive_cacheHistory_withoutDay.get(key) < System.currentTimeMillis()){
+                            log.info("[CACHE] Delete {} statistics to cache.", key);
                             deleteValue_cacheHistory_withoutDay(key);
                         }
                     }
 
                     for(KeyCacheHistoryWithDay key: cacheHistory_withDay.keySet()){
                         if(timeToLive_cacheHistory_withDay.get(key) < System.currentTimeMillis()){
+                            log.info("[CACHE] Delete statistics from {} on day {} to cache.", key.getCountry(), key.getDay());
                             deleteValue_cacheHistory_withDay(key);
                         }
                     }
 
                     if(timeToLive_cacheCountry < System.currentTimeMillis()){
+                        log.info("[CACHE] Delete all countries to cache.");
                         deleteValue_cacheCountry();
                     }
 
