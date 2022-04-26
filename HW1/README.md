@@ -23,6 +23,8 @@ Tirar o string e colocar date e time.
 quando pesquiso por USA no otherdays encrava por ser mts dados
 quando pesquiso por dia, o dia desaparece do input :(
 Compor os model, tirar as anotacoes
-Log "Delete all countries" esta sempre aparecer
-Quando procuro a history do pais x retorna uma lista vazia, devia ser assim ou returnar uma lista vazia??
-No file Covid19ControllerTest o teste: testGetHistoryByCountryAndByDay_withParametersInvalid  , esta completo?
+->Log "Delete all countries" esta sempre aparecer
+->Quando procuro a history do pais x retorna uma lista vazia, devia ser assim ou returnar uma execao de tipo erro??E dps guardo esta lista vazia na cache, devia ser assim?
+->No file Covid19ControllerTest o teste: testGetHistoryByCountryAndByDay_withParametersInvalid  , esta completo?
+No file Covid19ServiceTest falta testes quando a API n esta a funcionar
+-> verificar se no file Covid19ServiceTest as funcoes verify estao bem , tive preguica
