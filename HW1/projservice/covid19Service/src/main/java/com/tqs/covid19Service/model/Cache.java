@@ -41,6 +41,18 @@ public class Cache {
         return requests;
     }
 
+    public Map<String, List<Statistic>> getCacheHistory_withoutDay() {
+        return cacheHistory_withoutDay;
+    }
+
+    public Map<KeyCacheHistoryWithDay, List<Statistic>> getCacheHistory_withDay() {
+        return cacheHistory_withDay;
+    }
+
+    public List<Country> getCacheCountry() {
+        return cacheCountry;
+    }
+    
     public boolean addValue_cacheHistory_withoutDay(String key, List<Statistic> statistics){
         timeToLive_cacheHistory_withoutDay.put(key, System.currentTimeMillis() + this.lifeTime);
         cacheHistory_withoutDay.put(key, statistics);
@@ -136,8 +148,8 @@ public class Cache {
                         }
                     }
 
-                    //if( !timeToLive_cacheCountry.equals(0L) && timeToLive_cacheCountry < System.currentTimeMillis()){
-                    if(timeToLive_cacheCountry < System.currentTimeMillis()){
+                    if( !timeToLive_cacheCountry.equals(0L) && timeToLive_cacheCountry < System.currentTimeMillis()){
+                    //if(timeToLive_cacheCountry < System.currentTimeMillis()){
                         log.info("[CACHE] Delete all countries to cache.");
                         deleteValue_cacheCountry();
                     }
@@ -156,4 +168,12 @@ public class Cache {
         return thread;
     }
 
+    public void clearCache(){
+        cacheHistory_withoutDay.clear();
+        cacheHistory_withDay.clear();
+        cacheCountry = new ArrayList<>();
+        timeToLive_cacheHistory_withoutDay.clear();
+        timeToLive_cacheHistory_withDay.clear();
+        timeToLive_cacheCountry = 0L;
+    }
 }

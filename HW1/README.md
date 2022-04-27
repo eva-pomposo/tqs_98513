@@ -22,7 +22,7 @@ https://adminlte.io/themes/v3/iframe.html#
 Tirar o string e colocar date e time.
 quando pesquiso por USA no otherdays encrava por ser mts dados
 quando pesquiso por dia, o dia desaparece do input :(
-Compor os model, tirar as anotacoes
+Compor os model, tirar as anotacoes, tirar os repository
 ->Log "Delete all countries" esta sempre aparecer
 ->Quando procuro a history do pais x retorna uma lista vazia, devia ser assim ou returnar uma execao de tipo erro??E dps guardo esta lista vazia na cache, devia ser assim?
 ->No file Covid19ControllerTest o teste: testGetHistoryByCountryAndByDay_withParametersInvalid  , esta completo?
