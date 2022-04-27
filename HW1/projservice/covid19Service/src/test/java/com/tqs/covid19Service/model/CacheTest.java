@@ -14,9 +14,6 @@ class CacheTest {
     Statistic statistic1;
     Statistic statistic2;
     List<Statistic> allStatistic1;
-    Statistic statistic3;
-    Statistic statistic4;
-    List<Statistic> allStatistic2;
     KeyCacheHistoryWithDay key;
     Country country1;
     Country country2;
@@ -30,10 +27,6 @@ class CacheTest {
         statistic1 = new Statistic("Europe", "Portugal", 10198931, "+195", 11590, 58, 19869, "3225", 32895, "+12", "141", 1436, "79657", 812415, "2020-06-02", "2020-06-02T12:45:07+00:00");
         statistic2 = new Statistic("Europe", "Portugal", 10199012, "+195", 11591, 57, 19868, "3224", 32894, "+11", "140", 1435, "79656", 812414, "2020-06-02", "2020-06-02T12:00:06+00:00");
         allStatistic1 = Arrays.asList(statistic1, statistic2);
-
-        statistic3 = new Statistic("Europe", "Spain", 10198931, "+195", 11590, 58, 19869, "3225", 32895, "+12", "141", 1436, "79657", 812415, "2020-06-02", "2020-06-02T12:45:07+00:00");
-        statistic4 = new Statistic("Europe", "Spain", 10199012, "+195", 11591, 57, 19868, "3224", 32894, "+11", "140", 1435, "79656", 812414, "2020-06-02", "2020-06-02T12:00:06+00:00");
-        allStatistic2 = Arrays.asList(statistic3, statistic4);
 
         key = new KeyCacheHistoryWithDay("Portugal", "2020-06-02");
 

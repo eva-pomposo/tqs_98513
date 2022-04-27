@@ -28,3 +28,5 @@ Compor os model, tirar as anotacoes, tirar os repository
 ->No file Covid19ControllerTest o teste: testGetHistoryByCountryAndByDay_withParametersInvalid  , esta completo?
 No file Covid19ServiceTest falta testes quando a API n esta a funcionar
 -> verificar se no file Covid19ServiceTest as funcoes verify estao bem , tive preguica
+se tiver tempo fazer teste para o model
+ResolverTest verificar se aquilo que achava esta certo, e falta testes de quando converto algo invalido 

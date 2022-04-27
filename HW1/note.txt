@@ -30,9 +30,9 @@ C) Testes de integração em sua API (sugestão Spring Boot MockMvc e/ou REST-As
 D) Testes funcionais (na interface web). Certifique-se de adotar uma abordagem orientada por comportamento (recursos com cenários).
 
 
-A:A e B, cachetestes (ja esta)
+A:A (n é preciso) e B (ja esta), cachetestes (ja esta)
 
-B: (ja esta)
+B: TesteC (ja esta)
 -> testes de integração onde um bean (ex: serviço externo) precisa ser simulado;CarControllerTest; C_EmployeeController_WithMockServiceTest (nao envolve a base de dados);
 
 C:
@@ -42,5 +42,5 @@ d:...selenium
 
 ---------------------
 
-H: cachetestes (ja esta), connection,TestA, TesteB (ja esta),TestC (ja esta), TestD, TestE, resolver selenium
-B: cachetestes (ja esta), unit, TestA, TesteB (ja esta), TesteC (ja esta), selenium 
+H: cachetestes (ja esta), connection (ja esta),TestA (n é preciso), TesteB (ja esta),TestC (ja esta), resolver (ja esta mais ou menos), TestD, TestE selenium
+B: cachetestes (ja esta), unit, TestA (n é preciso), TesteB (ja esta), TesteC (ja esta), selenium 

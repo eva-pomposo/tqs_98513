@@ -1,6 +1,7 @@
 package com.tqs.covid19Service.resolver;
 
 import java.io.IOException;
+import java.net.ConnectException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
@@ -14,19 +15,27 @@ import com.tqs.covid19Service.model.Country;
 import org.json.JSONObject;
 import com.tqs.covid19Service.model.Statistic;
 
-//@Component
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Resolver {
+    private static final Logger log = LoggerFactory.getLogger(Resolver.class);
 
     public String callEXternalAPI(String url) throws URISyntaxException, IOException, InterruptedException {
-        HttpRequest request = HttpRequest.newBuilder()
-		.uri(URI.create("https://covid-193.p.rapidapi.com" + url))
-		.header("X-RapidAPI-Host", "covid-193.p.rapidapi.com")
-		.header("X-RapidAPI-Key", "886b841662msh40d546b46fa2f68p1573e7jsndafa7121ef3a")
-		.method("GET", HttpRequest.BodyPublishers.noBody())
-		.build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        try {
+            HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create("https://covid-193.p.rapidapi.com" + url))
+            .header("X-RapidAPI-Host", "covid-193.p.rapidapi.com")
+            .header("X-RapidAPI-Key", "886b841662msh40d546b46fa2f68p1573e7jsndafa7121ef3a")
+            .method("GET", HttpRequest.BodyPublishers.noBody())
+            .build();
+            HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
 
-        return response.body();
+            return response.body();
+        } catch (Exception e) {
+            log.error("[API] Error getting to url {}", url);
+            throw new ConnectException();
+        }
     }
 
     public List<Country> convertStringtoListCountries(String string){
