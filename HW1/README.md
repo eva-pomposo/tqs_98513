@@ -20,13 +20,15 @@ https://adminlte.io/themes/v3/iframe.html#
 
 
 Tirar o string e colocar date e time.
+-> Verficar se corrigi o Log "Delete all countries" estar sempre aparecer
+->Quando procuro a history do pais x retorna uma lista vazia, devia ser assim ou returnar uma execao de tipo erro??E dps guardo esta lista vazia na cache, devia ser assim?
+->No file Covid19ControllerTest o teste: testGetHistoryByCountryAndByDay_withParametersInvalid  , esta completo?
+-> verificar se no file Covid19ServiceTest as funcoes verify estao bem , tive preguica
+se tiver tempo fazer teste para o model
+
+
 quando pesquiso por USA no otherdays encrava por ser mts dados
 quando pesquiso por dia, o dia desaparece do input :(
 Compor os model, tirar as anotacoes, tirar os repository
-->Log "Delete all countries" esta sempre aparecer
-->Quando procuro a history do pais x retorna uma lista vazia, devia ser assim ou returnar uma execao de tipo erro??E dps guardo esta lista vazia na cache, devia ser assim?
-->No file Covid19ControllerTest o teste: testGetHistoryByCountryAndByDay_withParametersInvalid  , esta completo?
 No file Covid19ServiceTest falta testes quando a API n esta a funcionar
--> verificar se no file Covid19ServiceTest as funcoes verify estao bem , tive preguica
-se tiver tempo fazer teste para o model
 ResolverTest verificar se aquilo que achava esta certo, e falta testes de quando converto algo invalido 

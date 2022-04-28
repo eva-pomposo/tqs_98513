@@ -59,7 +59,6 @@ class Covid19ControllerTest {
 
         when( service.getHistory("Portugal")).thenReturn(statistics);
      
-        //Verificar mais parametros ??
         mvc.perform(
             get("/api/history/Portugal").contentType(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk())
@@ -102,7 +101,6 @@ class Covid19ControllerTest {
 
         when( service.getHistory("Portugal", "2020-06-02")).thenReturn(statistics);
      
-        //Verificar mais parametros ??
         mvc.perform(
             get("/api/history/Portugal/2020-06-02").contentType(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk())
