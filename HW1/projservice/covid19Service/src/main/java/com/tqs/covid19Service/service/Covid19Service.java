@@ -26,6 +26,22 @@ public class Covid19Service {
     
     private Resolver resolver = new Resolver();
 
+    public void addValue_cacheCountry(List<Country> allCountries){
+        cache.addValue_cacheCountry(allCountries);
+    }
+
+    public void addValue_cacheHistory_withDay(KeyCacheHistoryWithDay key, List<Statistic> allStatistic){
+        cache.addValue_cacheHistory_withDay(key, allStatistic);
+    }
+
+    public void addValue_cacheHistory_withoutDay(String key, List<Statistic> allStatistic){
+        cache.addValue_cacheHistory_withoutDay(key, allStatistic);
+    }
+
+    public void clearCache(){
+        cache.clearCache();
+    }
+
     public List<Statistic> getHistory(String country) throws URISyntaxException, IOException, InterruptedException {
         List<Statistic> statistics =  cache.getStatisticsWithoutDay_FromCache(country);
 
@@ -38,6 +54,7 @@ public class Covid19Service {
             } catch (Exception e) {
                 log.error("There was an error while calling the external API: {}", e.getMessage());
             }
+
 
             log.info("Pass the external API response to a created API response.");
             statistics = resolver.convertStringtoHistory(response); 
@@ -77,7 +94,7 @@ public class Covid19Service {
 
     public List<Country> getCountries() throws URISyntaxException, IOException, InterruptedException{
         List<Country> countries = cache.getCountries_FromCache();
-
+        
         if (countries == null) {
             log.info("Get all countries through external API.");
 

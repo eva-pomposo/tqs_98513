@@ -25,6 +25,7 @@ Tirar o string e colocar date e time.
 ->No file Covid19ControllerTest o teste: testGetHistoryByCountryAndByDay_withParametersInvalid  , esta completo?
 -> verificar se no file Covid19ServiceTest as funcoes verify estao bem , tive preguica
 se tiver tempo fazer teste para o model
+teste de integracao "Covid19RestControllerIT.java" acho que esta mal feito pq tenho duas funcao no service publicas que chamam o objeto da cache  
 
 
 quando pesquiso por USA no otherdays encrava por ser mts dados
