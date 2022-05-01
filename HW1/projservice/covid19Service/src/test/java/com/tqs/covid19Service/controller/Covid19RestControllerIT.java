@@ -1,17 +1,16 @@
 package com.tqs.covid19Service.controller;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
 import com.tqs.covid19Service.Covid19ServiceApplication;
-import com.tqs.covid19Service.model.Cache;
 import com.tqs.covid19Service.model.Country;
 import com.tqs.covid19Service.model.KeyCacheHistoryWithDay;
 import com.tqs.covid19Service.model.Statistic;
 import com.tqs.covid19Service.service.Covid19Service;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -81,7 +80,7 @@ class Covid19RestControllerIT {
     }
 
     @Test
-    void whenValidCountryAndDay_thenStatus200WithHistoryThroughExternalAPI() throws Exception {
+    void whenValidCountryAndDay_thenStatus200WithHistoryThroughExternalAPI() throws Exception, IOException {
         mvc.perform(get("/api/history/Portugal/2020-06-02").contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -92,7 +91,7 @@ class Covid19RestControllerIT {
     }
 
     @Test
-    void whenValidCountryAndDay_thenStatus200WithHistoryThroughCache() throws Exception {
+    void whenValidCountryAndDay_thenStatus200WithHistoryThroughCache() throws Exception, IOException {
         createTestHistory();
 
         mvc.perform(get("/api/history/Portugal/2020-06-02").contentType(MediaType.APPLICATION_JSON))
@@ -105,7 +104,7 @@ class Covid19RestControllerIT {
     }
 
     @Test
-    void whenInvalidCountryAndDay_thenStatus200() throws Exception {
+    void whenInvalidCountryAndDay_thenStatus200() throws Exception, IOException {
 
         mvc.perform(get("/api/history/x/x").contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
@@ -115,7 +114,7 @@ class Covid19RestControllerIT {
     }
 
     @Test
-    void whenValidCountry_thenStatus200WithHistoryThroughCache() throws Exception {
+    void whenValidCountry_thenStatus200WithHistoryThroughCache() throws Exception, IOException {
         createTestHistory();
 
         mvc.perform(get("/api/history/Portugal").contentType(MediaType.APPLICATION_JSON))
@@ -128,7 +127,7 @@ class Covid19RestControllerIT {
     }
 
     @Test
-    void whenValidCountry_thenStatus200WithHistoryExternalAPI() throws Exception {
+    void whenValidCountry_thenStatus200WithHistoryExternalAPI() throws Exception, IOException {
 
         mvc.perform(get("/api/history/Portugal").contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
@@ -141,7 +140,7 @@ class Covid19RestControllerIT {
 
 
     @Test
-    void whenInvalidCountry_thenStatus200() throws Exception {
+    void whenInvalidCountry_thenStatus200() throws Exception, IOException {
 
         mvc.perform(get("/api/history/x").contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
