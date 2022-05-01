@@ -78,15 +78,15 @@ public class Resolver {
                 statistic.setNew_cases(cases.getString("new"));
             } 
 
-            if (!cases.get("active").getClass().getName().equals("org.json.JSONObject$1") && !jsonObjectResponse.get("population").getClass().getName().equals("org.json.JSONObject$Null")) { 
+            if (!cases.get("active").getClass().getName().equals("org.json.JSONObject$1") && !cases.get("active").getClass().getName().equals("org.json.JSONObject$Null")) { 
                 statistic.setActive_cases(cases.getInt("active"));
             } 
 
-            if (!cases.get("recovered").getClass().getName().equals("org.json.JSONObject$1") && !jsonObjectResponse.get("population").getClass().getName().equals("org.json.JSONObject$Null")) { 
+            if (!cases.get("recovered").getClass().getName().equals("org.json.JSONObject$1") && !cases.get("recovered").getClass().getName().equals("org.json.JSONObject$Null")) { 
                 statistic.setRecovered_cases(cases.getInt("recovered"));
             } 
 
-            if (!cases.get("critical").getClass().getName().equals("org.json.JSONObject$1") && !jsonObjectResponse.get("population").getClass().getName().equals("org.json.JSONObject$Null")) { 
+            if (!cases.get("critical").getClass().getName().equals("org.json.JSONObject$1") && !cases.get("critical").getClass().getName().equals("org.json.JSONObject$Null")) { 
                 statistic.setCritical_cases(cases.getInt("critical"));
             } 
 
@@ -94,7 +94,7 @@ public class Resolver {
                 statistic.setPop1m_cases(cases.getString("1M_pop"));
             } 
 
-            if (!cases.get("total").getClass().getName().equals("org.json.JSONObject$1") && !jsonObjectResponse.get("population").getClass().getName().equals("org.json.JSONObject$Null")) { 
+            if (!cases.get("total").getClass().getName().equals("org.json.JSONObject$1") && !cases.get("total").getClass().getName().equals("org.json.JSONObject$Null")) { 
                 statistic.setTotal_cases(cases.getInt("total"));
             } 
 
@@ -108,7 +108,7 @@ public class Resolver {
                 statistic.setPop1m_deaths(deaths.getString("1M_pop"));
             } 
 
-            if (!deaths.get("total").getClass().getName().equals("org.json.JSONObject$1") && !jsonObjectResponse.get("population").getClass().getName().equals("org.json.JSONObject$Null")) { 
+            if (!deaths.get("total").getClass().getName().equals("org.json.JSONObject$1") && !deaths.get("total").getClass().getName().equals("org.json.JSONObject$Null")) { 
                 statistic.setTotal_deaths(deaths.getInt("total"));
             } 
 
@@ -118,7 +118,7 @@ public class Resolver {
                 statistic.setPop1m_tests(tests.getString("1M_pop"));
             } 
 
-            if (!tests.get("total").getClass().getName().equals("org.json.JSONObject$1") && !jsonObjectResponse.get("population").getClass().getName().equals("org.json.JSONObject$Null")) { 
+            if (!tests.get("total").getClass().getName().equals("org.json.JSONObject$1") && !tests.get("total").getClass().getName().equals("org.json.JSONObject$Null")) { 
                 statistic.setTotal_tests(tests.getInt("total"));
             } 
 

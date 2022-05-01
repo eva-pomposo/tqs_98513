@@ -28,7 +28,7 @@ public class Pages {
     }
 
 
-    @GetMapping("/otherdays")
+    @GetMapping("/")
     public String getOtherDays(Model model) {
 
         try {
@@ -38,7 +38,7 @@ public class Pages {
         }
         
         model.addAttribute("countries", countries);
-        return "otherDays";
+        return "index";
     }
 
     @PostMapping("/otherdays")
@@ -62,7 +62,7 @@ public class Pages {
 
         model.addAttribute("countrySelected", filterOtherDays.getCountryName());
 
-        return "otherDays";
+        return "index";
     }
 
     @GetMapping("/cachestatistics")
