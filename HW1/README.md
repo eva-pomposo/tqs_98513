@@ -1,26 +1,12 @@
-API que escolhi:
-    https://rapidapi.com/api-sports/api/covid-193
+# Statistics Covid-19
 
-/countries:
-->pesquisar os paises todos;
-->pesquisar os paises por nome;
+## Report 
 
-/statistics:
--> ver as estatisticas de hoje de cada pais
--> ver as estatisticas de hoje para um determinado pais;
+For information click [here](https://github.com/eva-pomposo/tqs_98513/tree/main/HW1/report/report.pdf)
 
-/history:
--> ver as estatisticas de toda a historia de um pais;
--> ver todas as estatisticas de um determinado dia de um pais;
+## How to run
 
-
-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_table
-
-https://adminlte.io/themes/v3/iframe.html#
-
-
--> Verficar se corrigi o Log "Delete all countries" estar sempre aparecer
-
-No file Covid19ServiceTest falta testes quando a API n esta a funcionar
-ResolverTest verificar se aquilo que achava esta certo, e falta testes de quando converto algo invalido 
-se usar o docker mudar a porta que esta no teste cucumber no file feature
+```
+./mvnw spring-boot:run
+mvn clean package
+```

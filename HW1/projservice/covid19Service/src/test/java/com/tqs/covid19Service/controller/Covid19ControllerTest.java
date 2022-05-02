@@ -71,18 +71,6 @@ class Covid19ControllerTest {
         verify(service, times(1)).getHistory("Portugal");
     }
 
-    //Quando procuro a history do pais x retorna uma lista vazia, devia ser assim ou returnar uma lista vazia??
-    /*
-    @Test
-    void testGetHistoryByCountry_withCountryInvalid() throws Exception {
-        mvc.perform(
-            get("/api/history/Portugal"))
-            .andExpect(status().isNotFound());
-
-        verify(service, times(1)).getHistory("Portugal");
-    }
-    */
-
     @Test
     void testGetHistoryByCountry_withCountryInvalid() throws Exception {
         mvc.perform(
@@ -115,8 +103,6 @@ class Covid19ControllerTest {
         verify(service, times(1)).getHistory("Portugal", "2020-06-02");
     }
 
-    //Quando procuro a history do pais x retorna uma lista vazia, devia ser assim ou returnar uma lista vazia??
-    //Esta completo ??
     @Test
     void testGetHistoryByCountryAndByDay_withParametersInvalid() throws Exception {
         mvc.perform(
