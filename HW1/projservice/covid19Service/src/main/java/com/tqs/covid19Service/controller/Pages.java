@@ -58,6 +58,8 @@ public class Pages {
             } catch (IOException | URISyntaxException | InterruptedException e) {
                 e.printStackTrace();
             }
+            model.addAttribute("daySelected", filterOtherDays.getDay());
+
         }
 
         model.addAttribute("countrySelected", filterOtherDays.getCountryName());

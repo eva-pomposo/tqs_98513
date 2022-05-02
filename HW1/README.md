@@ -33,3 +33,4 @@ quando pesquiso por dia, o dia desaparece do input :(
 Compor os model, tirar as anotacoes, tirar os repository
 No file Covid19ServiceTest falta testes quando a API n esta a funcionar
 ResolverTest verificar se aquilo que achava esta certo, e falta testes de quando converto algo invalido 
+se usar o docker mudar a porta que esta no teste cucumber no file feature

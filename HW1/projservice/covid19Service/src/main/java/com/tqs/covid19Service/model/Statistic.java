@@ -1,18 +1,6 @@
 package com.tqs.covid19Service.model;
 
-import lombok.Data;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.GenerationType;
-
-@Data
-@Entity
 public class Statistic {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;    
-
     private String continent;
 
     private String country;
@@ -41,12 +29,11 @@ public class Statistic {
 
     private int total_tests;
 
-    private String day; //Date??
+    private String day;
 
-    private String time; //Time??
+    private String time; 
 
-    public Statistic() {
-    }
+    public Statistic(){}
 
     public Statistic(String continent, String country, int population, String new_cases, int active_cases,
             int critical_cases, int recovered_cases, String pop1m_cases, int total_cases, String new_deaths,
@@ -67,10 +54,6 @@ public class Statistic {
         this.total_tests = total_tests;
         this.day = day;
         this.time = time;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getContinent() {
@@ -202,14 +185,97 @@ public class Statistic {
     }
 
     @Override
-    public String toString() {
-        return "Statistic [active_cases=" + active_cases + ", continent=" + continent + ", country=" + country
-                + ", critical_cases=" + critical_cases + ", day=" + day + ", id=" + id + ", new_cases=" + new_cases
-                + ", new_deaths=" + new_deaths + ", pop1m_cases=" + pop1m_cases + ", pop1m_deaths=" + pop1m_deaths
-                + ", pop1m_tests=" + pop1m_tests + ", population=" + population + ", recovered_cases=" + recovered_cases
-                + ", time=" + time + ", total_cases=" + total_cases + ", total_deaths=" + total_deaths
-                + ", total_tests=" + total_tests + "]";
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + active_cases;
+        result = prime * result + ((continent == null) ? 0 : continent.hashCode());
+        result = prime * result + ((country == null) ? 0 : country.hashCode());
+        result = prime * result + critical_cases;
+        result = prime * result + ((day == null) ? 0 : day.hashCode());
+        result = prime * result + ((new_cases == null) ? 0 : new_cases.hashCode());
+        result = prime * result + ((new_deaths == null) ? 0 : new_deaths.hashCode());
+        result = prime * result + ((pop1m_cases == null) ? 0 : pop1m_cases.hashCode());
+        result = prime * result + ((pop1m_deaths == null) ? 0 : pop1m_deaths.hashCode());
+        result = prime * result + ((pop1m_tests == null) ? 0 : pop1m_tests.hashCode());
+        result = prime * result + population;
+        result = prime * result + recovered_cases;
+        result = prime * result + ((time == null) ? 0 : time.hashCode());
+        result = prime * result + total_cases;
+        result = prime * result + total_deaths;
+        result = prime * result + total_tests;
+        return result;
     }
 
-    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Statistic other = (Statistic) obj;
+        if (active_cases != other.active_cases)
+            return false;
+        if (continent == null) {
+            if (other.continent != null)
+                return false;
+        } else if (!continent.equals(other.continent))
+            return false;
+        if (country == null) {
+            if (other.country != null)
+                return false;
+        } else if (!country.equals(other.country))
+            return false;
+        if (critical_cases != other.critical_cases)
+            return false;
+        if (day == null) {
+            if (other.day != null)
+                return false;
+        } else if (!day.equals(other.day))
+            return false;
+        if (new_cases == null) {
+            if (other.new_cases != null)
+                return false;
+        } else if (!new_cases.equals(other.new_cases))
+            return false;
+        if (new_deaths == null) {
+            if (other.new_deaths != null)
+                return false;
+        } else if (!new_deaths.equals(other.new_deaths))
+            return false;
+        if (pop1m_cases == null) {
+            if (other.pop1m_cases != null)
+                return false;
+        } else if (!pop1m_cases.equals(other.pop1m_cases))
+            return false;
+        if (pop1m_deaths == null) {
+            if (other.pop1m_deaths != null)
+                return false;
+        } else if (!pop1m_deaths.equals(other.pop1m_deaths))
+            return false;
+        if (pop1m_tests == null) {
+            if (other.pop1m_tests != null)
+                return false;
+        } else if (!pop1m_tests.equals(other.pop1m_tests))
+            return false;
+        if (population != other.population)
+            return false;
+        if (recovered_cases != other.recovered_cases)
+            return false;
+        if (time == null) {
+            if (other.time != null)
+                return false;
+        } else if (!time.equals(other.time))
+            return false;
+        if (total_cases != other.total_cases)
+            return false;
+        if (total_deaths != other.total_deaths)
+            return false;
+        if (total_tests != other.total_tests)
+            return false;
+        return true;
+    }
+
 }

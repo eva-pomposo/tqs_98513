@@ -83,7 +83,8 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h2>Analysis</h2>
+            <h2 th:if="${daySelected}" th:text="'Analysis: ' + ${countrySelected} + ' on ' + ${daySelected}"></h2>
+            <h2 th:unless="${daySelected}" th:text="${countrySelected} ? 'Analysis: ' + ${countrySelected} : 'Analysis'"></h2>
           </div>
         </div>
       </div><!-- /.container-fluid -->
