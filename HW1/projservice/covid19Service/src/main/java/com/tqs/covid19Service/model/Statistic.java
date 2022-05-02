@@ -278,4 +278,14 @@ public class Statistic {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Statistic [active_cases=" + active_cases + ", continent=" + continent + ", country=" + country
+                + ", critical_cases=" + critical_cases + ", day=" + day + ", new_cases=" + new_cases + ", new_deaths="
+                + new_deaths + ", pop1m_cases=" + pop1m_cases + ", pop1m_deaths=" + pop1m_deaths + ", pop1m_tests="
+                + pop1m_tests + ", population=" + population + ", recovered_cases=" + recovered_cases + ", time=" + time
+                + ", total_cases=" + total_cases + ", total_deaths=" + total_deaths + ", total_tests=" + total_tests
+                + "]";
+    }
+
 }

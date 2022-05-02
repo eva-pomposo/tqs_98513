@@ -39,6 +39,11 @@ public class Country {
         } else if (!name.equals(other.name))
             return false;
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Country [name=" + name + "]";
     }   
 
     

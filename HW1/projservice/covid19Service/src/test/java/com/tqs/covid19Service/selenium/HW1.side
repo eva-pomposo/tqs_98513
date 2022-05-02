@@ -1,0 +1,260 @@
+{
+  "id": "0d81d3da-9419-4144-993e-744d80c47bc8",
+  "version": "2.0",
+  "name": "HW1",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "00ad2068-dd82-4a85-9463-50757bc65c1c",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "fa3f3454-6a8d-4120-9f6e-5374856ba493",
+    "name": "getHistoryWithoutDayTest",
+    "commands": [{
+      "id": "7eb574b0-32e2-43da-99fe-205a2409f3f4",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "44364652-7c7b-49d3-915d-e4ad556b9b74",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1848x1053",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e0338ce-607f-447c-ab38-ace83b569188",
+      "comment": "",
+      "command": "click",
+      "target": "css=h2",
+      "targets": [
+        ["css=h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Analysis')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aeb28528-0f0e-44b8-9f31-3e10dc669d8a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Search')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9aa660e4-abd9-40c6-8aa4-43c25f6d2039",
+      "comment": "",
+      "command": "click",
+      "target": "css=h2",
+      "targets": [
+        ["css=h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Analysis: Afghanistan')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "037fe1bb-405b-49ab-a4b4-8615dd87a23b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=2",
+      "targets": [
+        ["linkText=2", "linkText"],
+        ["css=.paginate_button:nth-child(3) > .page-link", "css:finder"],
+        ["xpath=//a[contains(text(),'2')]", "xpath:link"],
+        ["xpath=//div[@id='example2_paginate']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "1fca78dc-4904-4b43-886a-72dd59884ab0",
+    "name": "getHistoryWithDayTest",
+    "commands": [{
+      "id": "a9e992ee-5bf8-48d1-9e17-d67358f77bee",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3585b59e-3cbd-4a89-baab-3fb8c20f34dc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1848x1053",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1c44f85a-0f0d-4a4f-9a6a-108468a8ef3f",
+      "comment": "",
+      "command": "click",
+      "target": "css=h2",
+      "targets": [
+        ["css=h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Analysis')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "94a60b77-ce9a-4ea3-86b3-56a1234c4824",
+      "comment": "",
+      "command": "click",
+      "target": "css=.select2-selection__arrow",
+      "targets": [
+        ["css=.select2-selection__arrow", "css:finder"],
+        ["xpath=//span[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9f74a99-a9ed-4eed-8690-f3d2f0ac3ced",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=select2-countrySelect-results",
+      "targets": [
+        ["id=select2-countrySelect-results", "id"],
+        ["css=#select2-countrySelect-results", "css:finder"],
+        ["xpath=//ul[@id='select2-countrySelect-results']", "xpath:attributes"],
+        ["xpath=//span[2]/ul", "xpath:position"]
+      ],
+      "value": "251.5,146.48333740234375"
+    }, {
+      "id": "b1c714b4-55bc-4f5b-ba8d-f568cafcd32b",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=select2-countrySelect-results",
+      "targets": [
+        ["id=select2-countrySelect-results", "id"],
+        ["css=#select2-countrySelect-results", "css:finder"],
+        ["xpath=//ul[@id='select2-countrySelect-results']", "xpath:attributes"],
+        ["xpath=//span[2]/ul", "xpath:position"]
+      ],
+      "value": "251.5,146.48333740234375"
+    }, {
+      "id": "37617b7c-f10a-4272-b93f-876fb3ed4dc0",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=select2-countrySelect-results",
+      "targets": [
+        ["id=select2-countrySelect-results", "id"],
+        ["css=#select2-countrySelect-results", "css:finder"],
+        ["xpath=//ul[@id='select2-countrySelect-results']", "xpath:attributes"],
+        ["xpath=//span[2]/ul", "xpath:position"]
+      ],
+      "value": "251.5,146.48333740234375"
+    }, {
+      "id": "aa10a55d-2221-4be0-afe5-f1ffa87fe775",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-calendar",
+      "targets": [
+        ["css=.fa-calendar", "css:finder"],
+        ["xpath=//div[@id='reservationdate']/div/div/i", "xpath:idRelative"],
+        ["xpath=//div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e904be39-5552-4771-a649-cad1e98dae33",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) > .day:nth-child(1)",
+      "targets": [
+        ["css=tr:nth-child(1) > .day:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='reservationdate']/div/ul/li/div/div/table/tbody/tr/td", "xpath:idRelative"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b9c3108-3a4b-4043-a2d2-74b410cb0392",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Search')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4384da22-2b5f-4886-9263-f4d3db98d0ec",
+      "comment": "",
+      "command": "click",
+      "target": "css=h2",
+      "targets": [
+        ["css=h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Analysis: Portugal on 05/01/2022')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "15b8fefc-9135-48f6-b1b2-8d6c7a08db65",
+    "name": "cacheTest",
+    "commands": [{
+      "id": "e6d5b4fa-8129-4272-b778-0c5d8288a37d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "63ff5c43-4484-455a-93f3-7d99b5c3faa6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1848x1053",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "05c8c08c-82c1-439d-89ce-26c58aa1f530",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Cache Statistics",
+      "targets": [
+        ["linkText=Cache Statistics", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(@href, '/cachestatistics')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f663f04a-b6fc-4c0b-8ef8-f88ac1e2361b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-sm-6",
+      "targets": [
+        ["css=.col-sm-6", "css:finder"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f8f0834-29c9-4e18-ad2a-296bf19bc4d4",
+      "comment": "",
+      "command": "click",
+      "target": "css=h2",
+      "targets": [
+        ["css=h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Cache Statistics')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "240cd07b-9656-4fb0-97b1-8ebd88193238",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["00ad2068-dd82-4a85-9463-50757bc65c1c"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}

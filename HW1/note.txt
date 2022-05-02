@@ -29,18 +29,18 @@ B) Testes de nível de serviço, com isolamento de dependência usando mocks (su
 C) Testes de integração em sua API (sugestão Spring Boot MockMvc e/ou REST-Assured).
 D) Testes funcionais (na interface web). Certifique-se de adotar uma abordagem orientada por comportamento (recursos com cenários).
 
+Um breve Relatório Técnico deve explicar a estratégia adotada (suas opções como desenvolvedor) e oferecer evidências dos resultados obtidos
+(por exemplo: quais testes por nível de teste, capturas de tela das etapas representativas, (pequenos) trechos de código das partes principais,
+capturas de tela com os resultados do teste, etc.). Os resultados do painel do Sonar Qube devem ser incluídos (e discutidos). [Um modelo de relatório será fornecido.]
+1. O projeto de código, confirmado em seu repositório Git pessoal do TQS (pasta /HW1).
+Além do código, certifique-se de incluir no repositório um pequeno vídeo com uma demonstração de sua solução (ou um link para o vídeo, se o vídeo for um arquivo grande).
 
-A:A (n é preciso) e B (ja esta), cachetestes (ja esta)
+Overview
+<apresente brevemente sua aplicação: dê um nome ao produto, se for o caso; qual é a sua finalidade?>
 
-B: TesteC (ja esta)
--> testes de integração onde um bean (ex: serviço externo) precisa ser simulado;CarControllerTest; C_EmployeeController_WithMockServiceTest (nao envolve a base de dados);
+ES
 
-C:
--> Os IT's, testeD e testeE
+Current limitations
+<explique as limitações conhecidas 🡪 recursos não implementados ou defeituosos (mas esperados)>
 
-d:...selenium
-
----------------------
-
-H: cachetestes (ja esta), connection (ja esta),TestA (n é preciso), TesteB (ja esta),TestC (ja esta), resolver (ja esta mais ou menos), TestD, TestE selenium
-B: cachetestes (ja esta), unit, TestA (n é preciso), TesteB (ja esta), TesteC (ja esta), selenium 
+<descrição funcional do aplicativo: quem (atores) usará o aplicativo e para quê? Explique brevemente os principais cenários de uso. >
